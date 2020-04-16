@@ -36,3 +36,8 @@
 /Support/SingleRun/bin/Debug
 /Support/SingleRun/obj
 /ExecuteSolution/x64/Release
+/Support/ExampleRun/bin/Release
+/Support/ExampleRun/obj/Release
+/CompetitiveDirectory/ExampleRun.pdb
+/CompetitiveDirectory/ExampleRun.exe.config
+/CompetitiveDirectory/ExampleRun.exe

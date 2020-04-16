@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigReader", "ConfigReade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessRun", "ProcessRun\ProcessRun.csproj", "{548BF57B-583F-43DE-9A40-4CC7B7BBB58C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleRun", "ExampleRun\ExampleRun.csproj", "{D39EF8D5-2493-4533-AC5E-763A957CE45E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{548BF57B-583F-43DE-9A40-4CC7B7BBB58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{548BF57B-583F-43DE-9A40-4CC7B7BBB58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{548BF57B-583F-43DE-9A40-4CC7B7BBB58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39EF8D5-2493-4533-AC5E-763A957CE45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39EF8D5-2493-4533-AC5E-763A957CE45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39EF8D5-2493-4533-AC5E-763A957CE45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39EF8D5-2493-4533-AC5E-763A957CE45E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
