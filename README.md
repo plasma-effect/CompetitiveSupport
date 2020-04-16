@@ -1,0 +1,2 @@
+# CompetitiveSupport
+競技プログラミングのサポートをするやつ
