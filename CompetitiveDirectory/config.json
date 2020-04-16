@@ -1,0 +1,20 @@
+{
+  "ExecutableFile": "../ExecuteSolution/x64/Release/ExecuteSolution.exe",
+  "JudgeExecutableFile": null,
+  "TimeLimit": 10000,
+  "SingleRun": {
+    "InputFile": "single.txt",
+    "OutputFile": "result.txt"
+  },
+  "ExampleRun": {
+    "ExampleInputFileDirectory": "input/",
+    "ExampleInputFilePrefix": "example",
+    "ExampleOutputFileDirectory": "output/",
+    "ExampleOutputFilePrefix": "answer"
+  },
+  "AttemptHack": {
+    "TargetExecutableFile": null,
+    "TargetInputFile": null,
+    "TargetOutputFile": null
+  }
+}
