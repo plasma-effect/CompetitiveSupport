@@ -13,8 +13,8 @@
     "ExampleOutputFilePrefix": "answer"
   },
   "AttemptHack": {
-    "TargetExecutableFile": null,
-    "TargetInputFile": null,
-    "TargetOutputFile": null
+    "TargetExecutableFile": "../HackTest/x64/Release/HackTest.exe",
+    "TargetInputFile": "single.txt",
+    "TargetOutputFile": "target_result.txt"
   }
 }
