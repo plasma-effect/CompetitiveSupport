@@ -47,3 +47,13 @@
 /HackTest/HackTest/x64/Release
 /HackTest/x64/Release
 /Support/AttemptHack/obj/Release
+/CompetitiveDirectory/JudgedRun.pdb
+/CompetitiveDirectory/JudgedRun.exe.config
+/CompetitiveDirectory/JudgedRun.exe
+/JudgeTest/JudgeTest/x64
+/JudgeTest/x64
+/Support/JudgedRun/obj/Release
+/CompetitiveDirectory/JudgedProcessRun.pdb
+/CompetitiveDirectory/JudgedProcessRun.dll
+/Support/JudgedProcessRun/bin/Release/netstandard2.0
+/Support/JudgedProcessRun/obj

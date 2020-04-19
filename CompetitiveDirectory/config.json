@@ -1,6 +1,6 @@
 {
   "ExecutableFile": "../ExecuteSolution/x64/Release/ExecuteSolution.exe",
-  "JudgeExecutableFile": null,
+  "JudgeExecutableFile": "../JudgeTest/x64/Release/JudgeTest.exe",
   "TimeLimit": 10000,
   "SingleRun": {
     "InputFile": "single.txt",

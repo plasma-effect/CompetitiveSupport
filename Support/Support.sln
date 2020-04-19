@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleRun", "ExampleRun\Ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttemptHack", "AttemptHack\AttemptHack.csproj", "{216F0D8C-B9C8-4475-BC3C-92BD0B47177B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JudgedSingleRun", "JudgedRun\JudgedSingleRun.csproj", "{BA0BE47E-4B96-47D1-BD96-559AC6A3A5E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JudgedProcessRun", "JudgedProcessRun\JudgedProcessRun.csproj", "{AEC3B97F-F128-42F0-91B6-AAC9F49F1E95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{216F0D8C-B9C8-4475-BC3C-92BD0B47177B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{216F0D8C-B9C8-4475-BC3C-92BD0B47177B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{216F0D8C-B9C8-4475-BC3C-92BD0B47177B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA0BE47E-4B96-47D1-BD96-559AC6A3A5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0BE47E-4B96-47D1-BD96-559AC6A3A5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0BE47E-4B96-47D1-BD96-559AC6A3A5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0BE47E-4B96-47D1-BD96-559AC6A3A5E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC3B97F-F128-42F0-91B6-AAC9F49F1E95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC3B97F-F128-42F0-91B6-AAC9F49F1E95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC3B97F-F128-42F0-91B6-AAC9F49F1E95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC3B97F-F128-42F0-91B6-AAC9F49F1E95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
