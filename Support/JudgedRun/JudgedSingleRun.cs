@@ -18,6 +18,7 @@ namespace JudgedSingleRun
                 Error.WriteLine(@"""config.json""が存在しません");
                 return;
             }
+            var rewrite = args.Length >= 1 && args[0] == "--rewrite";
             var config = ConfigReader.Config.Include("config.json");
             if (!File.Exists(config.ExecutableFile))
             {
@@ -29,12 +30,7 @@ namespace JudgedSingleRun
                 Error.WriteLine(@"""JudgeExecutableFile""に存在しないファイルが設定されています");
                 return;
             }
-            if (!File.Exists(config.SingleRun.InputFile))
-            {
-                Error.WriteLine(@"""SingleRun.InputFile""に存在しないファイルが設定されています");
-                return;
-            }
-            var result = JudgedProcessRun.JudgedProcess.Run(config.ExecutableFile, config.JudgeExecutableFile, config.TimeLimit, config.SingleRun.InputFile, out var time, out var cout, out var cerr);
+            var result = JudgedProcessRun.JudgedProcess.Run(config.ExecutableFile, config.JudgeExecutableFile, config.TimeLimit, config.SingleRun.InputFile, out var time, out var cout, out var cerr, rewrite);
             using (var stream = new StreamWriter(config.SingleRun.OutputFile))
             {
                 stream.Write(cout);
@@ -47,7 +43,7 @@ namespace JudgedSingleRun
                 return;
             }
             WriteLine($"実行時間: {time}ms");
-            if(result==JudgedProcessRun.JudgedProcess.Result.RE)
+            if (result == JudgedProcessRun.JudgedProcess.Result.RE)
             {
                 ForegroundColor = ConsoleColor.Red;
                 Error.WriteLine("異常終了しました");
@@ -64,16 +60,16 @@ namespace JudgedSingleRun
                 ForegroundColor = ConsoleColor.White;
                 return;
             }
-            if(result==JudgedProcessRun.JudgedProcess.Result.WrongAnswer)
+            if (result == JudgedProcessRun.JudgedProcess.Result.WrongAnswer)
             {
                 ForegroundColor = ConsoleColor.Red;
-                WriteLine("Wrong Answer、もしくはジャッジが異常終了しました");
+                Error.WriteLine("Wrong Answer、もしくはジャッジが異常終了しました");
                 ForegroundColor = ConsoleColor.White;
             }
             else
             {
                 ForegroundColor = ConsoleColor.Green;
-                WriteLine("Acceptしました");
+                Error.WriteLine("Acceptしました");
                 ForegroundColor = ConsoleColor.White;
             }
         }

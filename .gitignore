@@ -57,3 +57,13 @@
 /CompetitiveDirectory/JudgedProcessRun.dll
 /Support/JudgedProcessRun/bin/Release/netstandard2.0
 /Support/JudgedProcessRun/obj
+/CompetitiveDirectory/JudgedExampleRun.pdb
+/CompetitiveDirectory/JudgedExampleRun.exe.config
+/CompetitiveDirectory/JudgedExampleRun.exe
+/CompetitiveDirectory/JudgedAttemptHack.pdb
+/CompetitiveDirectory/JudgedAttemptHack.exe.config
+/CompetitiveDirectory/JudgedAttemptHack.exe
+/Support/JudgedAttemptHack/obj/Release
+/Support/JudgedExampleRun/obj/Release
+/Support/AttemptHack/obj/Debug
+/Support/JudgedRun/obj/Debug

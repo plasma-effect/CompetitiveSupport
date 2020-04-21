@@ -13,7 +13,7 @@ namespace ExampleRun
     {
         static void Main(string[] args)
         {
-            if(args.Length==0)
+            if (args.Length == 0)
             {
                 Error.WriteLine("実行するファイル数を設定してください");
                 return;
@@ -43,7 +43,7 @@ namespace ExampleRun
             var wa = new SortedSet<int>();
             var re = new SortedSet<int>();
             var tle = new SortedSet<int>();
-            foreach(var i in Range(1, N))
+            foreach (var i in Range(1, N))
             {
                 var exampleFile = inputPrefix + $"{i}.txt";
                 var answerFile = outputPrefix + $"{i}.txt";
@@ -52,11 +52,11 @@ namespace ExampleRun
                     continue;
                 }
                 string input, answer;
-                using(var stream = new StreamReader(exampleFile))
+                using (var stream = new StreamReader(exampleFile))
                 {
                     input = stream.ReadToEnd();
                 }
-                using(var stream = new StreamReader(answerFile))
+                using (var stream = new StreamReader(answerFile))
                 {
                     answer = stream.ReadToEnd();
                 }
@@ -110,7 +110,7 @@ namespace ExampleRun
                 if (re.Count != 0)
                 {
                     WriteLine("Exist Runtime Error Result");
-                    foreach(var i in re)
+                    foreach (var i in re)
                     {
                         Write($"{i} ");
                     }
@@ -120,7 +120,7 @@ namespace ExampleRun
                 if (wa.Count != 0)
                 {
                     WriteLine("Exist Wrong Answer Result");
-                    foreach(var i in wa)
+                    foreach (var i in wa)
                     {
                         Write($"{i} ");
                     }
@@ -130,7 +130,7 @@ namespace ExampleRun
                 if (tle.Count != 0)
                 {
                     WriteLine("Exist Time Limit Exceed Result");
-                    foreach(var i in tle)
+                    foreach (var i in tle)
                     {
                         Write($"{i} ");
                     }

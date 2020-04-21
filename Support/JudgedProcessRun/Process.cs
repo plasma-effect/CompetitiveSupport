@@ -18,14 +18,15 @@ namespace JudgedProcessRun
             RE,
             JudgeTLE
         }
-        public static Result Run(string programPath, string judgePath, int time, string inputPath, out double executeTime, out string cout, out string cerr)
+        public static Result Run(string programPath, string judgePath, int time, string inputPath, out double executeTime, out string cout, out string cerr,bool rewriteInput=false)
         {
             cerr = null;
             using (var process = new Process())
             {
                 using (var judge = new Process())
                 {
-                    var builder = new StringBuilder();
+                    var coutBuilder = new StringBuilder();
+                    var inputBuilder = new StringBuilder();
                     process.StartInfo.UseShellExecute = false;
                     process.StartInfo.CreateNoWindow = true;
                     process.StartInfo.RedirectStandardOutput = true;
@@ -36,7 +37,7 @@ namespace JudgedProcessRun
                     {
                         if (!string.IsNullOrEmpty(e.Data))
                         {
-                            builder.AppendLine(e.Data);
+                            coutBuilder.AppendLine(e.Data);
                             if (!judge.HasExited)
                             {
                                 judge.StandardInput.WriteLine(e.Data);
@@ -49,11 +50,15 @@ namespace JudgedProcessRun
                     judge.StartInfo.RedirectStandardInput = true;
                     judge.StartInfo.RedirectStandardError = true;
                     judge.StartInfo.FileName = judgePath;
-                    judge.StartInfo.Arguments = Path.GetFullPath(inputPath);
+                    if (!string.IsNullOrEmpty(inputPath) && File.Exists(inputPath))
+                    {
+                        judge.StartInfo.Arguments = Path.GetFullPath(inputPath);
+                    }
                     judge.OutputDataReceived += (s, e) =>
                     {
                         if (!string.IsNullOrEmpty(e.Data))
                         {
+                            inputBuilder.AppendLine(e.Data);
                             if (!process.HasExited)
                             {
                                 process.StandardInput.WriteLine(e.Data);
@@ -82,11 +87,27 @@ namespace JudgedProcessRun
                     if (!process.HasExited)
                     {
                         process.Kill();
-                        cout = builder.ToString();
+                        cout = coutBuilder.ToString();
+                        if (!string.IsNullOrEmpty(inputPath) &&
+                            (!File.Exists(inputPath) || rewriteInput))
+                        {
+                            using (var stream = new StreamWriter(inputPath))
+                            {
+                                stream.Write(inputBuilder.ToString());
+                            }
+                        }
                         executeTime = default;
                         return Result.TLE;
                     }
-                    cout = builder.ToString();
+                    cout = coutBuilder.ToString();
+                    if (!string.IsNullOrEmpty(inputPath) &&
+                            (!File.Exists(inputPath) || rewriteInput))
+                    {
+                        using (var stream = new StreamWriter(inputPath))
+                        {
+                            stream.Write(inputBuilder.ToString());
+                        }
+                    }
                     executeTime = process.UserProcessorTime.TotalMilliseconds;
                     if (process.ExitCode != 0)
                     {
